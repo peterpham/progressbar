@@ -1,0 +1,13 @@
+<ul class="bars"></ul>
+<div class="controls">
+	<select class="currentbar">
+		{% for bar, i in bars %}
+		<option value="{{ loop.index0 }}">Bar {{ loop.index }}</option>
+		{% endfor %}
+	</select>
+	<div class="buttons">
+	{% for button in buttons %}
+	<button type="button" value="{{ button }}" class="btn">{{ button }}</button>
+	{% endfor %}
+	</div>
+</div>

@@ -4,7 +4,7 @@
   "description": "Demo of progress bar",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "url": "https://github.com/peterpham/progressbar",
   "author": "Peter Pham",
@@ -21,6 +21,8 @@
     "gulp-requirejs-optimize": "^1.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
-    "jshint": "^2.8.0"
+    "jshint": "^2.8.0",
+    "node-qunit-phantomjs": "^1.4.0",
+    "qunitjs": "^2.0.1"
   }
 }

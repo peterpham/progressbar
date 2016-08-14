@@ -1,0 +1,102 @@
+@import "normalize";
+
+$bar-color: #6dbceb;
+$bar-overflow-color: #d07c7a;
+
+@mixin bar-color ($background, $hover: lighten($background, 10%)) {
+	div {
+		background: $background;
+	}
+	&:hover {
+		div {
+			background: $hover;
+		}
+	}
+}
+html {
+	font-size: 16px;
+}
+body {
+	background: #e6e6e6;
+}
+#progressbar-app {
+	display:flex;
+	min-height:100vh;
+	flex-flow:column;
+}
+.bars {
+	display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+    	background: silver;
+    	display: block;
+    }
+}
+.bar {
+	height: 15vh;
+	line-height:15vh;
+	position:relative;
+
+	div {
+		margin: .1rem 0;
+		height: 100%;
+		transition: width .6s cubic-bezier(0.55, 0.06, 0.68, 0.19), background .3s ease;
+	}
+
+	@include bar-color($bar-color);
+	&.overflow {
+		@include bar-color($bar-overflow-color);
+	}
+
+	&:after {
+		content: attr(data-percentage);
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		text-align: center;
+		width: 100%;
+		vertical-align: middle;
+		color:#444;
+	}
+}
+.controls {
+	padding: 1rem;
+	flex: 1;
+	background: #636363;
+	justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-flow:row wrap;
+}
+button {
+	cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    color: rgba(0,0,0,.6);
+    margin: 0 .25em 0 0;
+    padding: .7em 1.5em;
+    text-transform: none;
+    text-shadow: none;
+    font-weight: 700;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: .2rem;
+    &:hover {
+    	background: $bar-color;
+    }
+}
+select {
+	height: 2.3em;
+	min-width: 10rem;
+	margin: 1rem;
+	border: none;
+}
