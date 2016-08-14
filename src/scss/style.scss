@@ -72,9 +72,11 @@ body {
     display: flex;
     flex-flow:row wrap;
 }
+.buttons {
+	display:inline-flex;
+}
 button {
 	cursor: pointer;
-    display: inline-block;
     min-height: 1em;
     outline: 0;
     border: none;
@@ -90,6 +92,10 @@ button {
     text-align: center;
     text-decoration: none;
     border-radius: .2rem;
+    -webkit-appearance:button;
+    user-select: none;
+    touch-action: manipulation;
+    background: #ddd;
     &:hover {
     	background: $bar-color;
     }
