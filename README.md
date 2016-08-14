@@ -19,10 +19,12 @@ $ gulp
 
 ### Unit Testing (QUnit)
 
-Via Browser
+Via Browser:
+
 [project root]/tests/testrunner.html
 
-Via Gulp/PhantomJS
+Via Gulp/PhantomJS:
+
 ```
 $ gulp test
 ```
